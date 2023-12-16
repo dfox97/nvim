@@ -75,4 +75,7 @@ Alternatively, to hide the username in the prompt (e.g., user@User:~/ becomes ~)
 # Display Git branch in terminal prompt with hidden username
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 ```
-![image](https://github.com/dfox97/nvim-setup/assets/61083107/f3b3e06f-6295-4590-a777-e81d8dd59214)
+
+# Examples
+### git blamer showcase:
+<img src="https://github.com/dfox97/nvim/assets/61083107/9a0f85ed-9c8d-47b9-8a05-bd6c9936d064" alt="git-blamer" height="200px" width="800px">
