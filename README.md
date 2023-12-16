@@ -1,16 +1,14 @@
 # Neovim - VS Code Inspired Setup
 
 If you're a Neovim beginner familiar with VS Code, this setup is designed to ease your transition by mimicking the VS Code environment. The repository contains only essential plugins for a minimal Neovim setup in a VS Code style.
+### Example nvim setup:
+<img src="https://github.com/dfox97/nvim/assets/61083107/8131b337-bd0b-4a25-88b1-4733d63e0f5a" alt="nvim-example" height="400px" width="400px">
 
 ### File info
 - **remap.lua:** Configure keybindings here.
 - **settings.lua:** Adjust editor settings like tab spacing.
 - **packer.lua:** Manage your plugins; run `:PackerSync` to install them.
 - **after/plugin/:** Configuration files for installed plugins.
-
-### Example nvim setup:
-<img src="https://github.com/dfox97/nvim/assets/61083107/8131b337-bd0b-4a25-88b1-4733d63e0f5a" alt="nvim-example" height="400px" width="400px">
-
 
 ## Instructions
 
