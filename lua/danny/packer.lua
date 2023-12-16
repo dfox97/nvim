@@ -36,9 +36,11 @@ return require('packer').startup(function(use)
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
     requires = {
-      --- Uncomment these if you want to manage LSP servers from Neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+
+      -- Additional lua configuration, makes nvim stuff amazing
+			{ "folke/neodev.nvim" },
 
       -- LSP Support
       'neovim/nvim-lspconfig',
@@ -48,6 +50,22 @@ return require('packer').startup(function(use)
       'L3MON4D3/LuaSnip',
     }
   }
+	use("nvim-lualine/lualine.nvim")
+
+  use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+	})
+
+
+  use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+	})
 
   --**********************
   -- non vs-code style plugins
