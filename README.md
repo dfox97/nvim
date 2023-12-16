@@ -32,11 +32,11 @@ Ensure Neovim and Tmux are installed on your system. On Windows 11 terminal, con
 tmux and neovim:
 ```
 sudo apt-get install tmux
-sudo add-apt-repository ppa:neovim-ppa/unstable (Or stable)
+sudo add-apt-repository ppa:neovim-ppa/unstable #Or stable
 sudo apt-get install neovim
 ```
 
-lazygit:
+lazygit https://github.com/jesseduffield/lazygit:
 ```
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -59,9 +59,8 @@ After installing the plugins, run the following command within Neovim:
 :Copilot setup
 ```
 
-
-## WSL Home: `~/.bashrc`
-#### Show git branch in terminal:
+### Show git branch in windows terminal (Optional additon):
+WSL Home: `~/.bashrc` 
 Add the following lines to your ~/.bashrc file for a customized terminal prompt displaying the Git branch:
 ```
 # Display Git branch in terminal prompt
