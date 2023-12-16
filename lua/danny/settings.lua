@@ -50,6 +50,25 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
+-- Set the filetype for TypeScript files
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
+]]
+
+-- Set the filetype for HTML files
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.html set filetype=html
+]]
+
+-- Set the filetype for CSS files
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.css set filetype=css
+]]
+
+-- Set the filetype for Lua files
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.lua set filetype=lua
+]]
 
 
 

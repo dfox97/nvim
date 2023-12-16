@@ -7,6 +7,14 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- for easily changing a line to comment
+	use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
@@ -14,20 +22,15 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
+  -- Color scheme vs-code dark modern (need treesitter for full effect)
   use 'Mofiqul/vscode.nvim'
-
-  -- Must if we want nice colors in text e.g see functions as yellow, etc.
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-  use {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
-
-  use 'mbbill/undotree'
-  use 'tpope/vim-fugitive'
   use 'nvim-treesitter/nvim-treesitter-context'
+
+  -- Fugitive is like vs code git source control - another option is lazygit
+  use 'tpope/vim-fugitive'
+  -- Blamer gives git commit info on each line of code - same as git lense
+  use 'APZelos/blamer.nvim'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -46,9 +49,14 @@ return require('packer').startup(function(use)
     }
   }
 
+  --**********************
+  -- non vs-code style plugins
+  -- *********************
+  use 'mbbill/undotree'
   use 'github/copilot.vim'
-  use 'APZelos/blamer.nvim'
-  
-  
-
+  use {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
 end)
