@@ -1,17 +1,43 @@
 vim.g.mapleader = " "
---[[ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) ]]
 
+-- Alt + arrow left to jump to older cursor position (back in jump list) keep existing ctrl + o keymap
+vim.api.nvim_set_keymap('n', '<A-Left>', '<C-o>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-Left>', '<C-o>', { noremap = true, silent = true })
+-- Alt + arrow right to jump to newer cursor position (forward in jump list) keep existing ctrl + i keymap
+vim.api.nvim_set_keymap('n', '<A-Right>', '<C-i>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-Down>', '<C-i>', { noremap = true, silent = true })
 
--- Alt + Left Arrow to go back in buffer list
-vim.api.nvim_set_keymap('n', '<A-Left>', ':bprevious<CR>', { noremap = true, silent = true })
-
--- Alt + Right Arrow to go forward in buffer list
-vim.api.nvim_set_keymap('n', '<A-Right>', ':bnext<CR>', { noremap = true, silent = true })
-
+-- Define keybindings for undo and redo
+vim.api.nvim_set_keymap('n', '<C-z>', ':undo<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-y>', ':redo<CR>', { noremap = true, silent = true })
 
 -- Ignore CTRL-Z
 vim.api.nvim_set_keymap('n', '<C-z>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<C-z>', '<NOP>', { noremap = true, silent = true })
+
+-- Open temporary terminal in split using Ctrl + ;
+local is_terminal_open = false
+
+function ToggleTerminal()
+    if is_terminal_open then
+        vim.cmd('q!')
+    else
+        vim.cmd(':below 9sp | terminal')
+    end
+    is_terminal_open = not is_terminal_open
+end
+
+-- Map leader+; to toggle the small (9 lines) horizontal terminal at the bottom
+vim.api.nvim_set_keymap('n', '<leader>;', [[:lua ToggleTerminal()<CR>]], { noremap = true, silent = true })
+--[[ vim.api.nvim_set_keymap('n', '<leader>;', ':below 9sp | terminal<CR>', { noremap = true, silent = true }) ]]
+
+-- Split window
+vim.api.nvim_set_keymap('n', '<leader>w', ':vsp<CR>', { noremap = true, silent = true })
+-- Map Ctrl + h/j/k/l to switch between split windows
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
 
 -- move lines up and down using alt + arrow up/down
