@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
     'angularls',
     'html',
     'cssls',
+    'stylelint_lsp',
     'jsonls',
     'lua_ls',},
   handlers = {
@@ -32,6 +33,36 @@ require('mason-lspconfig').setup({
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+    tsserver = function()
+      require('lspconfig').tsserver.setup({
+      settings = {
+        completions = {
+          completeFunctionCalls = true
+        }
+      }
+    })
+    end,
+    stylelint_lsp = function()
+      require('lspconfig').stylelint_lsp.setup({
+        filetypes = { "css", "scss" },
+        settings = {
+          stylelintplus = {
+            autoFixOnSave = true
+          }
+        }
+      })
+    end,
+    eslint = function()
+      require('lspconfig').eslint.setup({
+        settings = {
+          linting = {
+            eslint = {
+              autoFixOnSave = true
+            }
+          }
+        }
+      })
     end,
   }
 })
