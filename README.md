@@ -1,4 +1,4 @@
-# Depreciated - use nvim 2.0 instead
+# Depreciated - use [nvim 2.0](https://github.com/dfox97/nvim-2.0) instead
 
 # Neovim - VS Code Inspired Setup
 
