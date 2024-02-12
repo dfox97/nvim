@@ -1,3 +1,5 @@
+# Depreciated - use nvim 2.0 instead
+
 # Neovim - VS Code Inspired Setup
 
 If you're a Neovim beginner familiar with VS Code, this setup is designed to ease your transition by mimicking the VS Code environment. The repository contains only essential plugins for a minimal Neovim setup in a VS Code style.
